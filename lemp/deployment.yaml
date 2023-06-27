@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmusicbot-deployment
+  labels:
+    app: jmusicbot
+spec:
+  selector:
+    matchLabels:
+      app: jmusicbot
+  template:
+    metadata:
+      labels:
+        app: jmusicbot
+    spec:
+      containers:
+      - name: bot
+        image: ghcr.io/mc-fdc-dev/jmusicbot
+        volumeMounts:
+        - name: config
+          mountPath: "/src/config.txt"
+          readOnly: true
+    volumes:
+    - name: config
+      configMap:
+        name: jmusicbot-config
