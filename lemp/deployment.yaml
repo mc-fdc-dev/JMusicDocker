@@ -20,7 +20,7 @@ spec:
         - name: config
           mountPath: "/src/config.txt"
           readOnly: true
-    volumes:
-    - name: config
-      configMap:
-        name: jmusicbot-config
+      volumes:
+      - name: config
+        configMap:
+          name: jmusicbot-config
