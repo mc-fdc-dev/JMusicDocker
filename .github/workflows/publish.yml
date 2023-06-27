@@ -24,4 +24,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/mc-fdc-dev-jmusicbot
+            ghcr.io/mc-fdc-dev/jmusicbot
